@@ -1,0 +1,5 @@
+Book_1 Ivanov Ivan 2000 Publisher_1 10.5 20.0 9.5
+Book_2 Petrov Petr 2010 Publisher_2 15.0 30.0 15.0
+Book_3 Kuznetsov Alex 1995 Publisher_3 12.0 25.0 13.0
+Book_4 Sidorov Sergey 2005 Publisher_4 8.0 18.0 10.0
+Book_5 Kozlov Dmitry 2015 Publisher_5 20.0 40.0 20.0
