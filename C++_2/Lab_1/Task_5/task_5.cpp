@@ -18,14 +18,14 @@ int main()
 {
 	setlocale(LC_ALL, "RU");  // Установка локали для поддержки кириллицы
 	std::vector<Book> books;  // Создание вектора для хранения объектов типа Book
-	std::ifstream out_file("file_5.txt");  // Открытие файла для чтения данных
+	std::ifstream in_file("file_5.txt");  // Открытие файла для чтения данных
 	Book book;  // Создание временного объекта Book для хранения данных из файла
 	// Чтение данных из файла и сохранение их в вектор books
-	while (out_file >> book.title >> book.second_name >> book.first_name >> book.year >> book.publisher >> book.cost >> book.price >> book.profit)
+	while (in_file >> book.title >> book.second_name >> book.first_name >> book.year >> book.publisher >> book.cost >> book.price >> book.profit)
 	{
 		books.push_back(book);  // Добавление объекта book в вектор books
 	}
-	out_file.close();  // Закрытие файла после чтения
+	in_file.close();  // Закрытие файла после чтения
 	// Вывод содержимого исходного файла на экран
 	std::cout << "Содержимое исходного файла:" << std::endl;
 	for (const auto& book : books)
