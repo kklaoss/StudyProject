@@ -24,13 +24,13 @@ int main()
 	out_file.open("data.dat", std::ios::binary);  // Открытие файла "data.dat" для записи в бинарном режиме
 	for (int code : codes)  // Цикл по всем элементам вектора с кодами символов
 	{
-		out_file.write(reinterpret_cast<const char*>(&code), sizeof(int));  // Запись числового кода символа в файл как бинарных данных
+		out_file.write((char*)&code, sizeof(int));  // Запись числового кода символа в файл как бинарных данных
 	}
 	out_file.close();  // Закрытие файла после записи
 	std::cout << "\nПосле преобразования: ";  // Вывод сообщения перед отображением данных после преобразования
 	in_file.open("data.dat", std::ios::binary);  // Открытие файла "data.dat" для чтения в бинарном режиме
 	int code;  // Объявление переменной для хранения числового кода символа
-	while (in_file.read(reinterpret_cast<char*>(&code), sizeof(int)))  // Чтение числовых кодов символов из файла
+	while (in_file.read((char*)&code, sizeof(int)))  // Чтение числовых кодов символов из файла
 	{
 		std::cout << code << " ";  // Вывод числового кода символа на экран
 	}
