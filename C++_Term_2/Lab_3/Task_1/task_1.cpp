@@ -16,8 +16,8 @@ int main()
 	// Переход на новую строку после ввода
 	std::cout << std::endl;
 	// Счетчики: слов на 'A' и слов "few"/"Few"
-	int countA = 0;
-	int countFew = 0;
+	int count_A = 0;
+	int count_few_or_Few = 0;
 	// Поиск первого вхождения подстроки "dollar" в тексте
 	size_t pos = text.find("dollar");
 	// Цикл замены всех вхождений "dollar" на "ruble"
@@ -38,16 +38,16 @@ int main()
 		// Проверка: начинается ли слово на 'A'
 		if (!word.empty() && word[0] == 'A')
 		{
-			countA++; // Увеличение счетчика слов на 'A'
+			count_A++; // Увеличение счетчика слов на 'A'
 		}
 		// Проверка: является ли слово "few" или "Few"
 		if (word == "few" || word == "Few")
 		{
-			countFew++; // Увеличение счетчика слов "few/Few"
+			count_few_or_Few++; // Увеличение счетчика слов "few/Few"
 		}
 	}
 	// Вывод результатов с использованием сырых строк для кавычек
-	std::cout << R"(Количество слов, начинающихся на "A": )" << countA << std::endl;
-	std::cout << R"(Количество слов "few" или "Few": )" << countFew << std::endl;
+	std::cout << R"(Количество слов, начинающихся на "A": )" << count_A << std::endl;
+	std::cout << R"(Количество слов "few" или "Few": )" << count_few_or_Few << std::endl;
 	std::cout << R"(Текст после замены "dollar" на "ruble": )" << text << std::endl;
 }
